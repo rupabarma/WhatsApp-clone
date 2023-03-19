@@ -15,13 +15,11 @@ const ChatMessage = (props: ChatMessageProps) => {
         return message.user.id === myId;
     }
   return (
-    <View style={Styles.container}>
+    <View style={[Styles.container, {justifyContent: isMyMessage() ? 'flex-end' : 'flex-start',}]}>
         <View style={[
             Styles.messageBox,
             {
                 backgroundColor: isMyMessage() ? '#DCF8C5' : '#fff',
-                marginLeft: isMyMessage() ? 80 : 0,
-                marginRight: isMyMessage() ? 0: 80,
             }
             ]}>
 
